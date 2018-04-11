@@ -1,0 +1,287 @@
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,700");
+
+* {
+    font-family: "Titillium Web", Helvetica, sans-serif;
+    margin: 0;
+}
+
+#control {
+    align-items: center;
+    background-color: rgba(245, 245, 245, 1.0);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.12);
+    display: flex;
+    left: 0;
+    margin: 0 auto;
+    min-width: 32rem;
+    padding: 0 1rem;
+    position: fixed;
+    right: 0;
+    top: 0.5rem;
+    transform: translateY(-100%);
+    transition: all 300ms;
+    width: 60%;
+    z-index: 3;
+}
+
+#control:hover {
+    top: 0;
+    transform: unset;
+}
+
+.control {
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 1.5rem;
+    margin-left: 0.5rem;
+    padding: 0.5rem;
+    transition: all 300ms;
+    width: 1.5rem;
+    cursor: pointer;
+}
+
+.control:focus,
+.control:hover {
+    background-color: rgba(153, 153, 153, 0.2);
+}
+
+.control:active {
+    background-color: rgba(153, 153, 153, 0.4);
+    transition: unset;
+}
+
+#name {
+    color: rgba(0, 0, 0, 0.87);
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    overflow: hidden;
+    padding: 1rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#display{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+#infos-window {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 25%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    background-color: rgba(245, 245, 245, 1.0);
+    border: 1px solid black;
+    border-radius: 2px;
+    flex-direction: column;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+#infos-menubar {
+    background-color: rgba(240, 240, 240, 1.0);
+    height: 1.5em;
+    border-bottom: 1px solid black;
+}
+
+#infos-close{
+    float: right;
+    cursor: pointer;
+    height: 100%;
+}
+
+#infos-content {
+    padding: 0 1em 1em 1em;
+}
+
+#infos-window table{
+    width: 100%;
+}
+
+#infos-window input{
+    width: 100%;
+}
+
+#infos-window input[type="checkbox"]{
+    width: initial;
+    display: inline-block;
+}
+
+#infos-window th{
+    text-align: left;
+}
+
+#infos-window tr {
+    width: 100%;
+}
+
+#infos-window td{
+    width: 50%;
+}
+
+/*#share {
+    width: initial !important;
+}*/
+
+#copy{
+    background-color: transparent;
+    border: none;
+    border-radius: 50%;
+    height: 17px;
+    width: 17px;
+    padding: 2px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+
+#copy:focus,
+#copy:hover {
+    background-color: rgba(153, 153, 153, 0.2);
+}
+
+#copy:active {
+    background-color: rgba(153, 153, 153, 0.4);
+    transition: unset;
+}
+
+#connect {
+    float: right;
+    padding: 1px 18px;
+    cursor: pointer;
+}
+
+#display {
+    background: black;
+}
+#display div{
+    margin: 0 auto;
+}
+#loading-title {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 55%;
+    transform: translateY(-50%);
+    width: 100%;
+    color:  rgba(97, 97, 97, 1.0);
+    font-size: 1.5em;
+    z-index: 0;
+}
+
+#loading {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 10;
+}
+
+#loading > div {
+    border-radius: 50%;
+    height: 1.5rem;
+    margin: 0.5rem;
+    width: 1.5rem;
+}
+
+#loading > div:nth-child(1) {
+    background-color: rgba(33, 150, 243, 1.0);
+    animation: dot1 linear 1.3s infinite alternate;
+}
+
+#loading > div:nth-child(2) {
+    background-color: rgba(156, 39, 176, 1.0);
+    animation: dot2 linear 1.3s infinite alternate;
+}
+
+#loading > div:nth-child(3) {
+    background-color: rgba(244, 67, 54, 1.0);
+    animation: dot3 linear 1.3s infinite alternate;
+}
+
+#loading > div:nth-child(4) {
+    background-color: rgba(255, 152, 0, 1.0);
+    animation: dot4 linear 1.3s infinite alternate;
+}
+
+#loading > div:nth-child(5) {
+    background-color: rgba(76, 175, 80, 1.0);
+    animation: dot5 linear 1.3s infinite alternate;
+}
+
+@keyframes dot1 {
+    20% {
+        transform: translateY(0);
+    }
+    35% {
+        transform: translateY(-2rem);
+    }
+    50% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dot2 {
+    27.5% {
+        transform: translateY(0);
+    }
+    42.5% {
+        transform: translateY(-2rem);
+    }
+    57.5% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dot3 {
+    35% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2rem);
+    }
+    65% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dot4 {
+    42.5% {
+        transform: translateY(0);
+    }
+    57.5% {
+        transform: translateY(-2rem);
+    }
+    72.5% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes dot5 {
+    50% {
+        transform: translateY(0);
+    }
+    65% {
+        transform: translateY(-2rem);
+    }
+    80% {
+        transform: translateY(0);
+    }
+}
