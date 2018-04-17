@@ -1,4 +1,5 @@
-var guacdHostname,guacdPort;
+var guacdHostname = '192.168.1.194';
+var guacdPort = '8031';
 var token = localStorage.getItem('token');
 if(token){
     display(token);
@@ -13,16 +14,13 @@ $('#connect').click(function () {
     var protocol = $('#protocol').val();
     var user = $('#user').val();
     var password = $('#password').val();
-
-    guacdHostname = $('#guacd-hostname').val();
-    guacdPort = $('#guacd-port').val();
+    
     if($('#guacd-our').is(':checked')){
+        guacdHostname = $('#guacd-hostname').val();
+        guacdPort = $('#guacd-port').val();
         if(!guacdHostname || !guacdPort){
             alert('Guacamole Proxy 参数不正确,请重新输入!')
         }
-    }else{
-        guacdHostname = '192.168.1.194';
-        guacdPort = '8031';
     }
 
     if(hostname && port && protocol && password){
@@ -64,7 +62,8 @@ function display(token) {
         return false;
     };
 
-    guac.connect("token=" + token + "&width="+ width +"&height="+ height+"&dpi=100");
+    guac.connect("token=" + token + "&width="+ width +"&height="+ height +"&dpi=100");
+    // guac.connect("token=" + token + "&width=1024&height=768&dpi=100");
 
     display.appendChild(guac.getDisplay().getElement());
 

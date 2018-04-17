@@ -23,7 +23,7 @@ class GuacController extends BaseController
             "connection"=>[
                 "type"=>$input['protocol'],
                 "settings"=>[
-                    'user'=>$input['user'],
+                    'username'=>$input['user'],
                     "hostname"=>$input['hostname'], // the vnc server ip
                     "port"=>$input['port'],				// the vnc server port
                     "password"=>$input['password']   // the vnc server psssword
